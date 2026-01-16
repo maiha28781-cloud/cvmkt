@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Marketing - Quản lý công việc</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="badge">Team Hub</span>
+          <h1>Quản lý công việc</h1>
+          <p>Phiên bản mini cho team marketing 4 vị trí.</p>
+        </div>
+
+        <div class="panel">
+          <h2>Trạng thái nhanh</h2>
+          <div class="metrics">
+            <div>
+              <span class="metric-value" id="metric-total">0</span>
+              <span class="metric-label">Tổng nhiệm vụ</span>
+            </div>
+            <div>
+              <span class="metric-value" id="metric-progress">0</span>
+              <span class="metric-label">Đang làm</span>
+            </div>
+            <div>
+              <span class="metric-value" id="metric-done">0</span>
+              <span class="metric-label">Hoàn tất</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h2>Vai trò</h2>
+          <ul class="role-list">
+            <li><span class="dot ads"></span>Leader kiêm Ads</li>
+            <li><span class="dot content"></span>Content</li>
+            <li><span class="dot video"></span>Quay dựng</li>
+            <li><span class="dot design"></span>Thiết kế</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h2>Hướng dẫn nhanh</h2>
+          <ol class="tips">
+            <li>Tạo nhiệm vụ mới ở form bên phải.</li>
+            <li>Chọn vị trí phụ trách và hạn hoàn thành.</li>
+            <li>Cập nhật trạng thái khi hoàn tất từng bước.</li>
+          </ol>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div>
+            <h2>Bảng giao việc</h2>
+            <p>Quản lý theo chiến dịch, giao việc theo từng vị trí.</p>
+          </div>
+          <div class="filters">
+            <select id="filter-role">
+              <option value="all">Tất cả vai trò</option>
+              <option value="Leader kiêm Ads">Leader kiêm Ads</option>
+              <option value="Content">Content</option>
+              <option value="Quay dựng">Quay dựng</option>
+              <option value="Thiết kế">Thiết kế</option>
+            </select>
+            <select id="filter-status">
+              <option value="all">Tất cả trạng thái</option>
+              <option value="todo">Chờ làm</option>
+              <option value="in-progress">Đang làm</option>
+              <option value="review">Chờ duyệt</option>
+              <option value="done">Hoàn tất</option>
+            </select>
+          </div>
+        </header>
+
+        <section class="board">
+          <div class="column" data-status="todo">
+            <div class="column-header">
+              <h3>Chờ làm</h3>
+              <span class="count" data-count="todo">0</span>
+            </div>
+            <div class="task-list"></div>
+          </div>
+          <div class="column" data-status="in-progress">
+            <div class="column-header">
+              <h3>Đang làm</h3>
+              <span class="count" data-count="in-progress">0</span>
+            </div>
+            <div class="task-list"></div>
+          </div>
+          <div class="column" data-status="review">
+            <div class="column-header">
+              <h3>Chờ duyệt</h3>
+              <span class="count" data-count="review">0</span>
+            </div>
+            <div class="task-list"></div>
+          </div>
+          <div class="column" data-status="done">
+            <div class="column-header">
+              <h3>Hoàn tất</h3>
+              <span class="count" data-count="done">0</span>
+            </div>
+            <div class="task-list"></div>
+          </div>
+        </section>
+
+        <section class="form-card">
+          <h3>Tạo nhiệm vụ mới</h3>
+          <form id="task-form">
+            <div class="form-grid">
+              <label>
+                Tên nhiệm vụ
+                <input type="text" name="title" placeholder="VD: Lên kế hoạch ads tuần" required />
+              </label>
+              <label>
+                Người phụ trách
+                <select name="assignee" required>
+                  <option value="Leader kiêm Ads">Leader kiêm Ads</option>
+                  <option value="Content">Content</option>
+                  <option value="Quay dựng">Quay dựng</option>
+                  <option value="Thiết kế">Thiết kế</option>
+                </select>
+              </label>
+              <label>
+                Ưu tiên
+                <select name="priority">
+                  <option value="Cao">Cao</option>
+                  <option value="Trung bình" selected>Trung bình</option>
+                  <option value="Thấp">Thấp</option>
+                </select>
+              </label>
+              <label>
+                Hạn hoàn thành
+                <input type="date" name="due" />
+              </label>
+            </div>
+            <label>
+              Mô tả ngắn
+              <textarea name="description" rows="3" placeholder="Ghi chú nhanh cho team..."></textarea>
+            </label>
+            <button type="submit" class="primary">Thêm nhiệm vụ</button>
+          </form>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
