@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marketing Team OS</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="badge">Marketing OS</span>
+          <h1>Team Marketing</h1>
+          <p>Quản lý chiến dịch, task, nội dung và báo cáo.</p>
+        </div>
+        <nav class="nav">
+          <a href="#tasks">Kanban & Task</a>
+          <a href="#workflow">Workflow Brief</a>
+          <a href="#calendar">Content Calendar</a>
+          <a href="#assets">Asset Library</a>
+          <a href="#reports">Ads Report</a>
+          <a href="#campaigns">Campaign</a>
+          <a href="#roles">Phân quyền</a>
+          <a href="#templates">Templates</a>
+          <a href="#notifications">Notifications</a>
+        </nav>
+        <div class="panel">
+          <h2>My tasks hôm nay</h2>
+          <div class="metrics">
+            <div>
+              <span class="metric-value" id="metric-my">0</span>
+              <span class="metric-label">Nhiệm vụ của tôi</span>
+            </div>
+            <div>
+              <span class="metric-value" id="metric-due">0</span>
+              <span class="metric-label">Sắp đến hạn</span>
+            </div>
+          </div>
+          <select id="current-user">
+            <option value="Leader">Leader/Admin</option>
+            <option value="Content">Content</option>
+            <option value="Thiết kế">Thiết kế</option>
+            <option value="Quay dựng">Quay dựng</option>
+          </select>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div>
+            <h2>Marketing Team OS</h2>
+            <p>Phiên bản triển khai nhanh trên Vercel cho team 4 người.</p>
+          </div>
+          <div class="actions">
+            <button class="primary">Tạo campaign</button>
+            <button class="ghost">Xuất báo cáo</button>
+          </div>
+        </header>
+
+        <section class="section" id="tasks">
+          <div class="section-header">
+            <h3>1) Quản lý Task (Kanban chuẩn marketing)</h3>
+            <p>To do → Doing → Review → Done, kèm checklist, priority, deadline, dependency.</p>
+          </div>
+          <div class="filters">
+            <input id="task-search" type="search" placeholder="Tìm task theo keyword..." />
+            <select id="filter-assignee">
+              <option value="all">Tất cả người phụ trách</option>
+            </select>
+            <select id="filter-status">
+              <option value="all">Tất cả trạng thái</option>
+              <option value="todo">To do</option>
+              <option value="doing">Doing</option>
+              <option value="review">Review</option>
+              <option value="done">Done</option>
+            </select>
+            <select id="filter-campaign">
+              <option value="all">Tất cả campaign</option>
+            </select>
+            <select id="filter-channel">
+              <option value="all">Tất cả kênh</option>
+              <option value="Facebook">Facebook</option>
+              <option value="TikTok">TikTok</option>
+              <option value="Google">Google</option>
+            </select>
+            <select id="filter-deadline">
+              <option value="all">Deadline</option>
+              <option value="overdue">Quá hạn</option>
+              <option value="soon">Còn ≤ 2 ngày</option>
+              <option value="future">Còn > 2 ngày</option>
+            </select>
+          </div>
+
+          <div class="board">
+            <div class="column" data-status="todo">
+              <div class="column-header">
+                <h4>To do</h4>
+                <span class="count" data-count="todo">0</span>
+              </div>
+              <div class="task-list"></div>
+            </div>
+            <div class="column" data-status="doing">
+              <div class="column-header">
+                <h4>Doing</h4>
+                <span class="count" data-count="doing">0</span>
+              </div>
+              <div class="task-list"></div>
+            </div>
+            <div class="column" data-status="review">
+              <div class="column-header">
+                <h4>Review</h4>
+                <span class="count" data-count="review">0</span>
+              </div>
+              <div class="task-list"></div>
+            </div>
+            <div class="column" data-status="done">
+              <div class="column-header">
+                <h4>Done</h4>
+                <span class="count" data-count="done">0</span>
+              </div>
+              <div class="task-list"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="workflow">
+          <div class="section-header">
+            <h3>2) Workflow Brief → Làm → Review → Duyệt</h3>
+            <p>Brief chuẩn, trạng thái nội dung và comment theo từng task/file.</p>
+          </div>
+          <div class="grid-2">
+            <div class="card">
+              <h4>Template Brief</h4>
+              <ul class="brief-list">
+                <li><strong>Mục tiêu:</strong> Tăng 30% lead chiến dịch 9.9</li>
+                <li><strong>Insight:</strong> Khách cần deal nhanh & tin cậy</li>
+                <li><strong>Kênh:</strong> Facebook / TikTok / Google</li>
+                <li><strong>Key message:</strong> Deal 9.9 giảm sâu + freeship</li>
+                <li><strong>CTA:</strong> Nhắn tin nhận ưu đãi</li>
+                <li><strong>Deadline:</strong> 07/09/2024</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h4>Trạng thái duyệt nội dung</h4>
+              <div class="status-flow">
+                <span>Draft</span>
+                <span>Waiting review</span>
+                <span>Need fix</span>
+                <span>Approved</span>
+                <span>Scheduled</span>
+                <span>Posted</span>
+              </div>
+              <div class="comment-block">
+                <p><strong>Comment mới nhất</strong></p>
+                <p>Leader: Cần chỉnh CTA rõ hơn ở bản caption v2.</p>
+                <p class="meta">Lịch sử chỉnh sửa: Content cập nhật 14:20 • Leader duyệt 15:10</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="calendar">
+          <div class="section-header">
+            <h3>3) Content Calendar</h3>
+            <p>Lịch đăng nội dung theo ngày/tuần/tháng, gắn task sản xuất.</p>
+          </div>
+          <div class="calendar-header">
+            <div class="calendar-tabs">
+              <button class="tab active" data-view="week">Tuần</button>
+              <button class="tab" data-view="month">Tháng</button>
+            </div>
+            <button class="ghost">Thêm bài đăng</button>
+          </div>
+          <div class="calendar" id="calendar-grid"></div>
+        </section>
+
+        <section class="section" id="assets">
+          <div class="section-header">
+            <h3>4) Quản lý File/Asset</h3>
+            <p>Upload, versioning, tag và link asset từ Drive/Canva/CapCut.</p>
+          </div>
+          <div class="grid-2">
+            <div class="card">
+              <h4>Upload nhanh</h4>
+              <div class="upload-box">
+                <p>Kéo thả file hoặc dán link.</p>
+                <input type="text" placeholder="Link Drive/Canva/CapCut" />
+                <button class="primary">Lưu asset</button>
+              </div>
+            </div>
+            <div class="card">
+              <h4>Danh sách asset</h4>
+              <div class="asset-list" id="asset-list"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="reports">
+          <div class="section-header">
+            <h3>5) Báo cáo hiệu suất quảng cáo tuần</h3>
+            <p>Nhập tay dữ liệu, so sánh tuần trước và xuất báo cáo.</p>
+          </div>
+          <div class="report-grid" id="report-grid"></div>
+        </section>
+
+        <section class="section" id="campaigns">
+          <div class="section-header">
+            <h3>8) Quản lý Campaign</h3>
+            <p>Nhìn tổng quan chiến dịch, ngân sách và các task/content/asset liên quan.</p>
+          </div>
+          <div class="campaign-grid" id="campaign-grid"></div>
+        </section>
+
+        <section class="section" id="roles">
+          <div class="section-header">
+            <h3>6) Phân quyền theo vai trò</h3>
+            <p>Leader/Admin, Content, Thiết kế, Quay dựng (mở rộng Ads/Account/Intern).</p>
+          </div>
+          <div class="grid-2" id="role-grid"></div>
+        </section>
+
+        <section class="section" id="templates">
+          <div class="section-header">
+            <h3>9) Bộ mẫu (Template)</h3>
+            <p>Brief, kịch bản video, báo cáo tuần, checklist sản xuất.</p>
+          </div>
+          <div class="template-grid" id="template-grid"></div>
+        </section>
+
+        <section class="section" id="notifications">
+          <div class="section-header">
+            <h3>7) Nhắc việc & thông báo</h3>
+            <p>Deadline, task Need fix, comment mới, task assign.</p>
+          </div>
+          <div class="notification-list" id="notification-list"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
