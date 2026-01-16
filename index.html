@@ -53,8 +53,7 @@
           <h2>Hướng dẫn nhanh</h2>
           <ol class="tips">
             <li>Tạo nhiệm vụ mới ở form bên phải.</li>
-            <li>Thêm checklist để giao rõ từng bước.</li>
-            <li>Đặt dependency để kiểm soát thứ tự làm.</li>
+
           </ol>
         </div>
       </aside>
@@ -75,10 +74,7 @@
             </select>
             <select id="filter-status">
               <option value="all">Tất cả trạng thái</option>
-              <option value="todo">To do</option>
-              <option value="doing">Doing</option>
-              <option value="review">Review</option>
-              <option value="done">Done</option>
+
             </select>
           </div>
         </header>
@@ -86,28 +82,25 @@
         <section class="board">
           <div class="column" data-status="todo">
             <div class="column-header">
-              <h3>To do</h3>
+
               <span class="count" data-count="todo">0</span>
             </div>
             <div class="task-list"></div>
           </div>
-          <div class="column" data-status="doing">
-            <div class="column-header">
-              <h3>Doing</h3>
-              <span class="count" data-count="doing">0</span>
+
             </div>
             <div class="task-list"></div>
           </div>
           <div class="column" data-status="review">
             <div class="column-header">
-              <h3>Review</h3>
+
               <span class="count" data-count="review">0</span>
             </div>
             <div class="task-list"></div>
           </div>
           <div class="column" data-status="done">
             <div class="column-header">
-              <h3>Done</h3>
+
               <span class="count" data-count="done">0</span>
             </div>
             <div class="task-list"></div>
@@ -132,38 +125,7 @@
                 </select>
               </label>
               <label>
-                Người review
-                <select name="reviewer" required>
-                  <option value="Leader kiêm Ads">Leader kiêm Ads</option>
-                  <option value="Content">Content</option>
-                  <option value="Quay dựng">Quay dựng</option>
-                  <option value="Thiết kế">Thiết kế</option>
-                </select>
-              </label>
-              <label>
-                Ưu tiên
-                <select name="priority">
-                  <option value="High">High</option>
-                  <option value="Medium" selected>Medium</option>
-                  <option value="Low">Low</option>
-                </select>
-              </label>
-              <label>
-                Deadline
-                <input type="date" name="due" />
-              </label>
-              <label>
-                Phụ thuộc
-                <select name="dependency" id="dependency-select">
-                  <option value="none">Không có</option>
-                </select>
-              </label>
-            </div>
-            <label>
-              Checklist (mỗi dòng 1 mục)
-              <textarea name="checklist" rows="4" placeholder="VD: Viết caption\nThiết kế ảnh\nDựng video"></textarea>
-            </label>
-            <label>
+
               Mô tả ngắn
               <textarea name="description" rows="3" placeholder="Ghi chú nhanh cho team..."></textarea>
             </label>
