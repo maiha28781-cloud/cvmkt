@@ -53,8 +53,7 @@
           <h2>Hướng dẫn nhanh</h2>
           <ol class="tips">
             <li>Tạo nhiệm vụ mới ở form bên phải.</li>
-            <li>Chọn vị trí phụ trách và hạn hoàn thành.</li>
-            <li>Cập nhật trạng thái khi hoàn tất từng bước.</li>
+
           </ol>
         </div>
       </aside>
@@ -75,10 +74,7 @@
             </select>
             <select id="filter-status">
               <option value="all">Tất cả trạng thái</option>
-              <option value="todo">Chờ làm</option>
-              <option value="in-progress">Đang làm</option>
-              <option value="review">Chờ duyệt</option>
-              <option value="done">Hoàn tất</option>
+
             </select>
           </div>
         </header>
@@ -86,28 +82,25 @@
         <section class="board">
           <div class="column" data-status="todo">
             <div class="column-header">
-              <h3>Chờ làm</h3>
+
               <span class="count" data-count="todo">0</span>
             </div>
             <div class="task-list"></div>
           </div>
-          <div class="column" data-status="in-progress">
-            <div class="column-header">
-              <h3>Đang làm</h3>
-              <span class="count" data-count="in-progress">0</span>
+
             </div>
             <div class="task-list"></div>
           </div>
           <div class="column" data-status="review">
             <div class="column-header">
-              <h3>Chờ duyệt</h3>
+
               <span class="count" data-count="review">0</span>
             </div>
             <div class="task-list"></div>
           </div>
           <div class="column" data-status="done">
             <div class="column-header">
-              <h3>Hoàn tất</h3>
+
               <span class="count" data-count="done">0</span>
             </div>
             <div class="task-list"></div>
@@ -132,19 +125,7 @@
                 </select>
               </label>
               <label>
-                Ưu tiên
-                <select name="priority">
-                  <option value="Cao">Cao</option>
-                  <option value="Trung bình" selected>Trung bình</option>
-                  <option value="Thấp">Thấp</option>
-                </select>
-              </label>
-              <label>
-                Hạn hoàn thành
-                <input type="date" name="due" />
-              </label>
-            </div>
-            <label>
+
               Mô tả ngắn
               <textarea name="description" rows="3" placeholder="Ghi chú nhanh cho team..."></textarea>
             </label>

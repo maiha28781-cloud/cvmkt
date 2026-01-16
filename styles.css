@@ -11,6 +11,7 @@
   --content: #22c55e;
   --video: #06b6d4;
   --design: #a855f7;
+
   font-size: 16px;
 }
 
@@ -228,7 +229,7 @@ button.primary:hover {
   padding: 12px;
   background: #f9fbff;
   display: grid;
-  gap: 8px;
+
 }
 
 .task-header {
@@ -266,20 +267,21 @@ button.primary:hover {
   color: var(--primary);
 }
 
-.tag.priority-cao {
+
   background: #fee2e2;
   color: #b91c1c;
 }
 
-.tag.priority-trung-binh {
+
   background: #fef3c7;
   color: #92400e;
 }
 
-.tag.priority-thap {
+
   background: #dcfce7;
   color: #166534;
 }
+
 
 .task-actions {
   display: flex;

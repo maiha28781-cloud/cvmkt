@@ -1,39 +1,6 @@
 const tasks = [
   {
     id: 1,
-    title: "Lên kế hoạch ads tuần 3",
-    assignee: "Leader kiêm Ads",
-    priority: "Cao",
-    due: "2024-09-05",
-    description: "Phân bổ ngân sách, xác định nhóm target.",
-    status: "todo",
-  },
-  {
-    id: 2,
-    title: "Viết content teaser campaign",
-    assignee: "Content",
-    priority: "Trung bình",
-    due: "2024-09-04",
-    description: "Chuẩn bị 3 concept caption.",
-    status: "in-progress",
-  },
-  {
-    id: 3,
-    title: "Storyboard video 15s",
-    assignee: "Quay dựng",
-    priority: "Cao",
-    due: "2024-09-03",
-    description: "Shot list và pacing theo brief mới.",
-    status: "review",
-  },
-  {
-    id: 4,
-    title: "Thiết kế KV campaign 9.9",
-    assignee: "Thiết kế",
-    priority: "Trung bình",
-    due: "2024-09-02",
-    description: "Đề xuất 2 hướng màu sắc.",
-    status: "done",
   },
 ];
 
@@ -48,20 +15,14 @@ const metrics = {
 };
 
 const statusLabels = {
-  todo: "Chờ làm",
-  "in-progress": "Đang làm",
-  review: "Chờ duyệt",
-  done: "Hoàn tất",
-};
 
-const priorityClass = (priority) =>
-  `priority-${priority.toLowerCase().replace(/\s/g, "-")}`;
 
 const buildTaskCard = (task) => {
   const card = document.createElement("article");
   card.className = "task";
   card.dataset.status = task.status;
   card.dataset.assignee = task.assignee;
+
 
   card.innerHTML = `
     <div class="task-header">
@@ -70,15 +31,7 @@ const buildTaskCard = (task) => {
     </div>
     <p>${task.description || "Chưa có mô tả."}</p>
     <div class="task-meta">
-      <span>${task.assignee}</span>
-      <span>Hạn: ${task.due || "--"}</span>
-      <span>${statusLabels[task.status]}</span>
-    </div>
-    <div class="task-actions">
-      <button data-action="todo">Chờ làm</button>
-      <button data-action="in-progress">Đang làm</button>
-      <button data-action="review">Chờ duyệt</button>
-      <button data-action="done">Hoàn tất</button>
+
     </div>
   `;
 
@@ -87,6 +40,7 @@ const buildTaskCard = (task) => {
       updateTaskStatus(task.id, btn.dataset.action);
     });
   });
+
 
   return card;
 };
@@ -115,11 +69,12 @@ const renderBoard = () => {
   });
 
   updateMetrics();
+
 };
 
 const updateMetrics = () => {
   const total = tasks.length;
-  const progress = tasks.filter((task) => task.status === "in-progress").length;
+
   const done = tasks.filter((task) => task.status === "done").length;
 
   if (metrics.total) metrics.total.textContent = total;
@@ -133,22 +88,23 @@ const updateMetrics = () => {
   });
 };
 
-const updateTaskStatus = (id, status) => {
-  const task = tasks.find((item) => item.id === id);
-  if (!task) return;
+
   task.status = status;
   renderBoard();
 };
+
 
 const addTask = (data) => {
   tasks.unshift({
     id: Date.now(),
     title: data.title,
     assignee: data.assignee,
+
     priority: data.priority,
     due: data.due,
     description: data.description,
     status: "todo",
+
   });
   renderBoard();
 };
@@ -160,12 +116,7 @@ if (taskForm) {
   taskForm.addEventListener("submit", (event) => {
     event.preventDefault();
     const formData = new FormData(taskForm);
-    addTask({
-      title: formData.get("title"),
-      assignee: formData.get("assignee"),
-      priority: formData.get("priority"),
-      due: formData.get("due"),
-      description: formData.get("description"),
+
     });
     taskForm.reset();
   });
